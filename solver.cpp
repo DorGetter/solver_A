@@ -198,18 +198,20 @@ RealVariable solver::operator/(const double &var, RealVariable num) {
     return RealVariable();
 }
 
+RealVariable solver::operator*(const RealVariable &var1, const double &var2) {
+    return RealVariable();
+}
 
+RealVariable solver::operator*(const int &var2, const RealVariable &var1) {
+    return RealVariable();
+}
 
-/*
->>>>> Complex <<<<<
-*/
 
 ComplexVariable::ComplexVariable()
 {
     this->a = 0;
     this->b = 1;
     this->c = 0;
-
 
 }
 
@@ -220,10 +222,6 @@ ComplexVariable ComplexVariable::operator()(ComplexVariable& var)
     return ans;
 
 }
-
-/*
-##### friend operators #####
-*/
 
 ComplexVariable solver::operator + (ComplexVariable const & var1 , ComplexVariable const & var2)
 {
@@ -363,6 +361,5 @@ double solver::solve(RealVariable var)
 
 std::complex<double> solver::solve(ComplexVariable var)
 {
-
     return 0i;
 }
