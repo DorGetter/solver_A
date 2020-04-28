@@ -32,7 +32,9 @@ namespace solver
         friend RealVariable operator * (double num , RealVariable const & var);
         friend RealVariable operator * (RealVariable const & var1 , RealVariable const & var2);
         friend RealVariable operator * (RealVariable const & var1 , int const & var2);
+
         friend RealVariable operator / (RealVariable const & var , double num);
+        friend RealVariable operator / (double const & var , RealVariable num);
 
         friend RealVariable operator == (RealVariable const & var , double num);
         friend RealVariable operator == (RealVariable const & var1 , RealVariable const & var2);
@@ -63,9 +65,15 @@ namespace solver
         friend ComplexVariable operator - (std::complex<double> num , ComplexVariable const & var);
 
         friend ComplexVariable operator ^ (ComplexVariable const & var , int pow);
+        friend ComplexVariable operator ^ (ComplexVariable const & var , ComplexVariable const & var2);
+
         friend ComplexVariable operator * (double num , ComplexVariable const & var);
+        friend ComplexVariable operator * (ComplexVariable const & var,double num );
+        friend ComplexVariable operator * (ComplexVariable const & var,ComplexVariable const & var2);
+
         friend ComplexVariable operator / (ComplexVariable const & var , double num);
         friend ComplexVariable operator == (ComplexVariable const & var , double num);
+        friend ComplexVariable operator == (double num,ComplexVariable const & var);
         friend ComplexVariable operator == (ComplexVariable const & var1 , ComplexVariable const & var2);
 
     };
